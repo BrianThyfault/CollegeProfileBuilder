@@ -20,10 +20,10 @@ class CollegeInfoView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        image.image = CollegeDetails.image
-        nameText.text = CollegeDetails.name
-        locationText.text = CollegeDetails.location
-        numOfStudentsText.text = CollegeDetails.numOfStudents
+        image.image = collegeInfo.image
+        nameText.text = collegeInfo.name
+        locationText.text = collegeInfo.location
+        numOfStudentsText.text = collegeInfo.numOfStudents
     }
 
     override func didReceiveMemoryWarning() {

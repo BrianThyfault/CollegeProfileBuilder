@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as! DetailViewController).collegeInfo = colleges[(myTableView.indexPathForSelectedRow?.row)!]
+        (segue.destination as! CollegeInfoView).collegeInfo = colleges[(tableView.indexPathForSelectedRow?.row)!]
     }
 
     
