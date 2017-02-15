@@ -12,6 +12,8 @@
 		3F33EB2F1E4B7CA4003148A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F33EB2D1E4B7CA4003148A0 /* Main.storyboard */; };
 		3F33EB311E4B7CA4003148A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F33EB301E4B7CA4003148A0 /* Assets.xcassets */; };
 		3F33EB341E4B7CA4003148A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F33EB321E4B7CA4003148A0 /* LaunchScreen.storyboard */; };
+		3F33EB3C1E4B7DF3003148A0 /* CollegeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F33EB3B1E4B7DF3003148A0 /* CollegeInfoView.swift */; };
+		3F33EB3E1E4B7E0F003148A0 /* CollegeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F33EB3D1E4B7E0F003148A0 /* CollegeDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		3F33EB301E4B7CA4003148A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F33EB331E4B7CA4003148A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F33EB351E4B7CA4003148A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F33EB3B1E4B7DF3003148A0 /* CollegeInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeInfoView.swift; sourceTree = "<group>"; };
+		3F33EB3D1E4B7E0F003148A0 /* CollegeDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				3F33EB291E4B7CA4003148A0 /* AppDelegate.swift */,
 				3F33EB2B1E4B7CA4003148A0 /* ViewController.swift */,
+				3F33EB3B1E4B7DF3003148A0 /* CollegeInfoView.swift */,
+				3F33EB3D1E4B7E0F003148A0 /* CollegeDetails.swift */,
 				3F33EB2D1E4B7CA4003148A0 /* Main.storyboard */,
 				3F33EB301E4B7CA4003148A0 /* Assets.xcassets */,
 				3F33EB321E4B7CA4003148A0 /* LaunchScreen.storyboard */,
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F33EB3E1E4B7E0F003148A0 /* CollegeDetails.swift in Sources */,
 				3F33EB2C1E4B7CA4003148A0 /* ViewController.swift in Sources */,
+				3F33EB3C1E4B7DF3003148A0 /* CollegeInfoView.swift in Sources */,
 				3F33EB2A1E4B7CA4003148A0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
