@@ -30,7 +30,11 @@ class CollegeInfoView: UIViewController {
 
     func save()
     {
-        
+        collegeInfo.image = image.image!
+        collegeInfo.name = nameText.text!
+        collegeInfo.location = locationText.text!
+        collegeInfo.numOfStudents = numOfStudentsText.text!
+    
     }
     
 
