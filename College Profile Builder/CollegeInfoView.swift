@@ -20,14 +20,16 @@ class CollegeInfoView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
+        
         image.image = collegeInfo.image
         nameText.text = collegeInfo.name
         locationText.text = collegeInfo.location
         numOfStudentsText.text = collegeInfo.numOfStudents
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func save()
+    {
         
     }
     

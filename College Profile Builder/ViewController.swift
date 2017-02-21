@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     var colleges:[CollegeDetails] = []
 
@@ -23,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         colleges.append(CollegeDetails.init(Name: "Chapman University", Location: "Orange, California", NumOfStudents: "8,305", Image: UIImage(named: "CU")!))
         colleges.append(CollegeDetails.init(Name: "Santa Clara University", Location: "Santa Clara, California", NumOfStudents: "9,015", Image: UIImage(named: "SCU")!))
         colleges.append(CollegeDetails.init(Name: "California State University: Fresno", Location: "Fresno, California", NumOfStudents: "24,136", Image: UIImage(named: "CSUF")!))
-        
+        //self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,11 +48,56 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = self.colleges[sourceIndexPath.row]
+        colleges.remove(at: sourceIndexPath.row)
+        colleges.insert(movedObject, at: destinationIndexPath.row)
+        //self.tableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         (segue.destination as! CollegeInfoView).collegeInfo = colleges[(tableView.indexPathForSelectedRow?.row)!]
     }
 
+    @IBAction func startEditing(_ sender: Any) {
+         tableView.isEditing = !tableView.isEditing
+    }
+
+    
+    @IBAction func addCell(_ sender: Any) {
+        let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .alert)
+        alert.addTextField {
+            (nameTextField) in nameTextField.placeholder = "School Name"
+        }
+        alert.addTextField {
+            (locationTextField) in locationTextField.placeholder = "City, State"
+        }
+        alert.addTextField {
+            (numTextField) in numTextField.placeholder = "# of Students"
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let add = UIAlertAction(title: "Add", style: .default) { (action) in
+            self.colleges.append(CollegeDetails(Name:(alert.textFields?[0].text)!, Location: (alert.textFields?[1].text)!, NumOfStudents: (alert.textFields?[2].text)!, Image: UIImage(named: "default")!))
+            self.tableView.reloadData()
+        }
+        alert.addAction(add)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
     
     
     

@@ -47,10 +47,19 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="39b-FH-m3F">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="siO-qA-SOJ"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6kz-FG-0Rz"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="mC6-sQ-Z9k">
+                            <connections>
+                                <action selector="startEditing:" destination="BYZ-38-t0r" id="o1N-dD-Yx9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6kz-FG-0Rz">
+                            <connections>
+                                <action selector="addCell:" destination="BYZ-38-t0r" id="C8j-r2-2Gr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="mC6-sQ-Z9k" id="UKw-tp-sc2"/>
                         <outlet property="tableView" destination="omr-bk-EaA" id="eia-W9-hP8"/>
                     </connections>
                 </viewController>
