@@ -27,6 +27,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colleges.count
     }
@@ -99,6 +103,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         present(alert, animated: true, completion: nil)
     }
     
+    func reload()
+    {
+        self.tableView.reloadData()
+    }
     
     
 }
