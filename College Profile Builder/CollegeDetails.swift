@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import MapKit
 
 class CollegeDetails: NSObject {
 
     var name = ""
     var location = ""
     var numOfStudents = ""
+    var websiteAddress = ""
     var image:UIImage = UIImage(named: "default")!
+    var selectedPin: MKPlacemark
     
-    init(Name: String, Location: String, NumOfStudents: String, Image:UIImage) {
+    init(Name: String, Location: String, NumOfStudents: String, WebsiteAddress: String, Image:UIImage, SelectedPin: MKPlacemark) {
         name = Name
         location = Location
         numOfStudents = NumOfStudents
+        websiteAddress = WebsiteAddress
         image = Image
+        selectedPin = SelectedPin
     }
     
 }

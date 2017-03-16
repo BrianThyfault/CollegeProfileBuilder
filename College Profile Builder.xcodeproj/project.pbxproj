@@ -14,6 +14,8 @@
 		3F33EB341E4B7CA4003148A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F33EB321E4B7CA4003148A0 /* LaunchScreen.storyboard */; };
 		3F33EB3C1E4B7DF3003148A0 /* CollegeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F33EB3B1E4B7DF3003148A0 /* CollegeInfoView.swift */; };
 		3F33EB3E1E4B7E0F003148A0 /* CollegeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F33EB3D1E4B7E0F003148A0 /* CollegeDetails.swift */; };
+		3FC780951E6DC59500730ACC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC780941E6DC59500730ACC /* MapViewController.swift */; };
+		3FC780971E6DC81200730ACC /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC780961E6DC81200730ACC /* LocationSearchTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		3F33EB351E4B7CA4003148A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F33EB3B1E4B7DF3003148A0 /* CollegeInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeInfoView.swift; sourceTree = "<group>"; };
 		3F33EB3D1E4B7E0F003148A0 /* CollegeDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeDetails.swift; sourceTree = "<group>"; };
+		3FC780941E6DC59500730ACC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3FC780961E6DC81200730ACC /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				3F33EB3B1E4B7DF3003148A0 /* CollegeInfoView.swift */,
 				3F33EB3D1E4B7E0F003148A0 /* CollegeDetails.swift */,
 				3F33EB2D1E4B7CA4003148A0 /* Main.storyboard */,
+				3FC780961E6DC81200730ACC /* LocationSearchTable.swift */,
+				3FC780941E6DC59500730ACC /* MapViewController.swift */,
 				3F33EB301E4B7CA4003148A0 /* Assets.xcassets */,
 				3F33EB321E4B7CA4003148A0 /* LaunchScreen.storyboard */,
 				3F33EB351E4B7CA4003148A0 /* Info.plist */,
@@ -143,8 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F33EB3E1E4B7E0F003148A0 /* CollegeDetails.swift in Sources */,
+				3FC780971E6DC81200730ACC /* LocationSearchTable.swift in Sources */,
 				3F33EB2C1E4B7CA4003148A0 /* ViewController.swift in Sources */,
 				3F33EB3C1E4B7DF3003148A0 /* CollegeInfoView.swift in Sources */,
+				3FC780951E6DC59500730ACC /* MapViewController.swift in Sources */,
 				3F33EB2A1E4B7CA4003148A0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +315,7 @@
 				3F33EB3A1E4B7CA4003148A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

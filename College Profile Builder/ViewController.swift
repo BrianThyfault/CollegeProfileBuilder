@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -17,13 +18,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        colleges.append(CollegeDetails.init(Name: "Univeristy of Southern California", Location: "Los Angeles, California", NumOfStudents: "44,000", Image: UIImage(named: "USC")!))
-        colleges.append(CollegeDetails.init(Name: "Univeristy of California: Los Angeles", Location: "Los Angeles, California", NumOfStudents: "44,947", Image: UIImage(named: "UCLA")!))
-        colleges.append(CollegeDetails.init(Name: "Univeristy of California: Santa Barbra", Location: "Santa Barbra, California", NumOfStudents: "23,497", Image: UIImage(named: "UCSB")!))
-        colleges.append(CollegeDetails.init(Name: "Univeristy of California: Santa Cruz", Location: "Santa Cruz, California", NumOfStudents: "17,335", Image: UIImage(named: "UCSC")!))
-        colleges.append(CollegeDetails.init(Name: "Chapman University", Location: "Orange, California", NumOfStudents: "8,305", Image: UIImage(named: "CU")!))
-        colleges.append(CollegeDetails.init(Name: "Santa Clara University", Location: "Santa Clara, California", NumOfStudents: "9,015", Image: UIImage(named: "SCU")!))
-        colleges.append(CollegeDetails.init(Name: "California State University: Fresno", Location: "Fresno, California", NumOfStudents: "24,136", Image: UIImage(named: "CSUF")!))
+        colleges.append(CollegeDetails.init(Name: "Univeristy of Southern California", Location: "Los Angeles, California", NumOfStudents: "44,000", WebsiteAddress: "https://www.usc.edu", Image: UIImage(named: "USC")!, SelectedPin: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 42.144678, longitude: -88.103774))))
+        colleges.append(CollegeDetails.init(Name: "Univeristy of California: Los Angeles", Location: "Los Angeles, California", NumOfStudents: "44,947", WebsiteAddress: "https://www.ucla.edu", Image: UIImage(named: "UCLA")!, SelectedPin: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 42.144678, longitude: -88.103774))))
+        colleges.append(CollegeDetails.init(Name: "Univeristy of California: Santa Barbra", Location: "Santa Barbra, California", NumOfStudents: "23,497", WebsiteAddress: "https://www.ucsb.edu", Image: UIImage(named: "UCSB")!, SelectedPin: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 42.144678, longitude: -88.103774))))
+        colleges.append(CollegeDetails.init(Name: "Univeristy of California: Santa Cruz", Location: "Santa Cruz, California", NumOfStudents: "17,335", WebsiteAddress: "https://www.ucsc.edu", Image: UIImage(named: "UCSC")!, SelectedPin: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 42.144678, longitude: -88.103774))))
+        colleges.append(CollegeDetails.init(Name: "Chapman University", Location: "Orange, California", NumOfStudents: "8,305", WebsiteAddress: "https://www.chapman.edu", Image: UIImage(named: "CU")!, SelectedPin: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 42.144678, longitude: -88.103774))))
+        colleges.append(CollegeDetails.init(Name: "Santa Clara University", Location: "Santa Clara, California", NumOfStudents: "9,015", WebsiteAddress: "https://www.scu.edu", Image: UIImage(named: "SCU")!, SelectedPin: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 42.144678, longitude: -88.103774))))
+        colleges.append(CollegeDetails.init(Name: "California State University: Fresno", Location: "Fresno, California", NumOfStudents: "24,136", WebsiteAddress: "https://www.fresnostate.edu", Image: UIImage(named: "CSUF")!, SelectedPin: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 42.144678, longitude: -88.103774))))
         //self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
@@ -92,10 +93,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alert.addTextField {
             (numTextField) in numTextField.placeholder = "# of Students"
         }
+        alert.addTextField {
+            (linkTextField) in linkTextField.placeholder = "Website Address"
+        }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let add = UIAlertAction(title: "Add", style: .default) { (action) in
-            self.colleges.append(CollegeDetails(Name:(alert.textFields?[0].text)!, Location: (alert.textFields?[1].text)!, NumOfStudents: (alert.textFields?[2].text)!, Image: UIImage(named: "default")!))
+            self.colleges.append(CollegeDetails(Name:(alert.textFields?[0].text)!, Location: (alert.textFields?[1].text)!, NumOfStudents: (alert.textFields?[2].text)!, WebsiteAddress: (alert.textFields?[3].text)!, Image: UIImage(named: "default")!, SelectedPin: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 42.144678, longitude: -88.103774))))
             self.tableView.reloadData()
         }
         alert.addAction(add)
